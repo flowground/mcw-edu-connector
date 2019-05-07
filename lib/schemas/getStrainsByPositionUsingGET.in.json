@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "chr": {
+            "required": true,
+            "type": "string"
+        },
+        "start": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "stop": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "mapKey": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

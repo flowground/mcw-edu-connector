@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "accId": {
+            "required": true,
+            "type": "string"
+        },
+        "speciesTypeKey": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "includeChildren": {
+            "required": true,
+            "type": "boolean"
+        },
+        "objectType": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

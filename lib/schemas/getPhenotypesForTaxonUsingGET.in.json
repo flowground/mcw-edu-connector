@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "taxonId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

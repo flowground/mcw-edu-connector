@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "accId": {
+            "required": true,
+            "type": "string"
+        },
+        "includeChildren": {
+            "required": true,
+            "type": "boolean"
+        }
+    }
+}

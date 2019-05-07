@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "aliasSymbol": {
+            "required": true,
+            "type": "string"
+        },
+        "speciesTypeKey": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

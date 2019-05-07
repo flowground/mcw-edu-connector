@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "speciesTypeKey": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "dateFromYYYYMMDD": {
+            "required": true,
+            "type": "string"
+        },
+        "dateToYYYYMMDD": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

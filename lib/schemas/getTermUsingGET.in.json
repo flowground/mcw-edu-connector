@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "accId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,1394 @@
+{
+    "title": "Rat Genome Database",
+    "description": "The RGD REST API provides programmatic access to information and annotation stored in the Rat Genome Database",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/mcw.edu/1.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://rest.rgd.mcw.edu/rgdws",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getAllelesForTaxonUsingGET": {
+            "main": "./lib/actions/getAllelesForTaxonUsingGET.js",
+            "title": "Get gene allele records submitted by RGD to AGR by taxonId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllelesForTaxonUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getExpressionForTaxonUsingGET": {
+            "main": "./lib/actions/getExpressionForTaxonUsingGET.js",
+            "title": "Get expression annotations submitted by RGD to AGR by taxonId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getExpressionForTaxonUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPhenotypesForTaxonUsingGET": {
+            "main": "./lib/actions/getPhenotypesForTaxonUsingGET.js",
+            "title": "Get phenotype annotations submitted by RGD to AGR by taxonId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPhenotypesForTaxonUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenesForLatestAssemblyUsingGET": {
+            "main": "./lib/actions/getGenesForLatestAssemblyUsingGET.js",
+            "title": "Get gene records submitted by RGD to AGR by taxonId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenesForLatestAssemblyUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotationsUsingPOST": {
+            "main": "./lib/actions/getAnnotationsUsingPOST.js",
+            "title": "Return a list of genes annotated to an ontology term",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotationsUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTermAccIdsUsingGET": {
+            "main": "./lib/actions/getTermAccIdsUsingGET.js",
+            "title": "Returns a list ontology term accession IDs annotated to an rgd object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTermAccIdsUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotationCountByAccIdUsingGET": {
+            "main": "./lib/actions/getAnnotationCountByAccIdUsingGET.js",
+            "title": "Returns annotation count for ontology accession ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotationCountByAccIdUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotationCountByAccIdAndSpeciesUsingGET": {
+            "main": "./lib/actions/getAnnotationCountByAccIdAndSpeciesUsingGET.js",
+            "title": "Returns annotation count for ontology accession ID and speicies",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotationCountByAccIdAndSpeciesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotationCountByAccIdAndObjectTypeUsingGET": {
+            "main": "./lib/actions/getAnnotationCountByAccIdAndObjectTypeUsingGET.js",
+            "title": "Returns annotation count for ontology accession ID and object type",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotationCountByAccIdAndObjectTypeUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotsByRefrerenceUsingGET": {
+            "main": "./lib/actions/getAnnotsByRefrerenceUsingGET.js",
+            "title": "Returns a list of annotations for a reference",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotsByRefrerenceUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotationsByRgdIdUsingGET": {
+            "main": "./lib/actions/getAnnotationsByRgdIdUsingGET.js",
+            "title": "Returns a list of annotations by RGD ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotationsByRgdIdUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotationsByRgdIdAndOntologyUsingGET": {
+            "main": "./lib/actions/getAnnotationsByRgdIdAndOntologyUsingGET.js",
+            "title": "Returns a list of annotations by RGD ID and ontology prefix",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotationsByRgdIdAndOntologyUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotationsByAccIdAndRgdIdUsingGET": {
+            "main": "./lib/actions/getAnnotationsByAccIdAndRgdIdUsingGET.js",
+            "title": "Returns a list of annotations by RGD ID and ontology term accession ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotationsByAccIdAndRgdIdUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotationsUsingGET": {
+            "main": "./lib/actions/getAnnotationsUsingGET.js",
+            "title": "Returns a list annotations for an ontology term or a term and it's children",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotationsUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenesByAffyIdUsingGET": {
+            "main": "./lib/actions/getGenesByAffyIdUsingGET.js",
+            "title": "Return a list of genes for an affymetrix ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenesByAffyIdUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenesByAliasSymbolUsingGET": {
+            "main": "./lib/actions/getGenesByAliasSymbolUsingGET.js",
+            "title": "Return a list of genes for an alias and species",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenesByAliasSymbolUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneAllelesUsingGET": {
+            "main": "./lib/actions/getGeneAllelesUsingGET.js",
+            "title": "Return a list of gene alleles",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneAllelesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAnnotatedGenesUsingPOST": {
+            "main": "./lib/actions/getAnnotatedGenesUsingPOST.js",
+            "title": "Return a list of genes annotated to an ontology term",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAnnotatedGenesUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllAnnotatedGenesUsingGET": {
+            "main": "./lib/actions/getAllAnnotatedGenesUsingGET.js",
+            "title": "Return a list of genes annotated to an ontology term",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllAnnotatedGenesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenesAnnotatedUsingGET": {
+            "main": "./lib/actions/getGenesAnnotatedUsingGET.js",
+            "title": "Return a list of genes annotated to an ontology term",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenesAnnotatedUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenesByKeywordUsingGET": {
+            "main": "./lib/actions/getGenesByKeywordUsingGET.js",
+            "title": "Return a list of genes by keyword and species type key",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenesByKeywordUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneByMapKeyUsingGET": {
+            "main": "./lib/actions/getGeneByMapKeyUsingGET.js",
+            "title": "Return a list of all genes with position information for an assembly",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneByMapKeyUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOrthologsByListUsingPOST": {
+            "main": "./lib/actions/getOrthologsByListUsingPOST.js",
+            "title": "Return a list of gene orthologs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOrthologsByListUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneOrthologsUsingGET": {
+            "main": "./lib/actions/getGeneOrthologsUsingGET.js",
+            "title": "Return a list of gene orthologs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneOrthologsUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenesBySpeciesUsingGET": {
+            "main": "./lib/actions/getGenesBySpeciesUsingGET.js",
+            "title": "Return a list of all genes for a species in RGD",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenesBySpeciesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenesByPositionUsingGET": {
+            "main": "./lib/actions/getGenesByPositionUsingGET.js",
+            "title": "Return a list of genes position and map key",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenesByPositionUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneByRgdIdUsingGET": {
+            "main": "./lib/actions/getGeneByRgdIdUsingGET.js",
+            "title": "Get a gene record by RGD ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneByRgdIdUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneBySymbolUsingGET": {
+            "main": "./lib/actions/getGeneBySymbolUsingGET.js",
+            "title": "Get a gene record by symbol and species type key",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneBySymbolUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneTypesUsingGET": {
+            "main": "./lib/actions/getGeneTypesUsingGET.js",
+            "title": "Returns a list of gene types avialable in RGD",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneTypesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEnsemblGeneMappingUsingPOST": {
+            "main": "./lib/actions/getEnsemblGeneMappingUsingPOST.js",
+            "title": "Translate RGD IDs to Ensembl Gene IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEnsemblGeneMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEnsemblGeneMappingUsingGET": {
+            "main": "./lib/actions/getEnsemblGeneMappingUsingGET.js",
+            "title": "Translate an RGD ID to an Ensembl Gene  ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEnsemblGeneMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEnsemblProteinMappingUsingPOST": {
+            "main": "./lib/actions/getEnsemblProteinMappingUsingPOST.js",
+            "title": "Translate RGD IDs to Ensembl Protein IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEnsemblProteinMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEnsemblProteinMappingUsingGET": {
+            "main": "./lib/actions/getEnsemblProteinMappingUsingGET.js",
+            "title": "Translate an RGD ID to an Ensembl Protein ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEnsemblProteinMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEnsemblTranscriptMappingUsingPOST": {
+            "main": "./lib/actions/getEnsemblTranscriptMappingUsingPOST.js",
+            "title": "Translate RGD IDs to Ensembl Transcript IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEnsemblTranscriptMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getEnsemblTranscriptMappingUsingGET": {
+            "main": "./lib/actions/getEnsemblTranscriptMappingUsingGET.js",
+            "title": "Translate an RGD ID to an Ensembl Transcript ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getEnsemblTranscriptMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGTEXMappingUsingPOST": {
+            "main": "./lib/actions/getGTEXMappingUsingPOST.js",
+            "title": "Translate RGD IDs to GTEx IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGTEXMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGTEXMappingUsingGET": {
+            "main": "./lib/actions/getGTEXMappingUsingGET.js",
+            "title": "Translate an RGD ID to an GTEx ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGTEXMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenBankNucleotideMappingUsingPOST": {
+            "main": "./lib/actions/getGenBankNucleotideMappingUsingPOST.js",
+            "title": "Translate RGD IDs to GenBank Nucleotide IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenBankNucleotideMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenBankNucleotideMappingUsingGET": {
+            "main": "./lib/actions/getGenBankNucleotideMappingUsingGET.js",
+            "title": "Translate an RGD ID to a GenBank Nucleotide ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenBankNucleotideMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenBankProteinMappingUsingPOST": {
+            "main": "./lib/actions/getGenBankProteinMappingUsingPOST.js",
+            "title": "Translate RGD IDs to GenBank Protein IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenBankProteinMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGenBankProteinMappingUsingGET": {
+            "main": "./lib/actions/getGenBankProteinMappingUsingGET.js",
+            "title": "Translate an RGD ID to a GenBank Protein ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGenBankProteinMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getHGNCMappingUsingPOST": {
+            "main": "./lib/actions/getHGNCMappingUsingPOST.js",
+            "title": "Translate RGD IDs to HGNC IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getHGNCMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getHGNCMappingUsingGET": {
+            "main": "./lib/actions/getHGNCMappingUsingGET.js",
+            "title": "Translate an RGD ID to an HGNC ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getHGNCMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMGIMappingUsingPOST": {
+            "main": "./lib/actions/getMGIMappingUsingPOST.js",
+            "title": "Translate RGD IDs to MGI IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMGIMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMGIMappingUsingGET": {
+            "main": "./lib/actions/getMGIMappingUsingGET.js",
+            "title": "Translate an RGD ID to an MGI ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMGIMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getNCBIGeneMappingUsingPOST": {
+            "main": "./lib/actions/getNCBIGeneMappingUsingPOST.js",
+            "title": "Translate RGD IDs to NCBI Gene IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getNCBIGeneMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getNCBIGeneMappingUsingGET": {
+            "main": "./lib/actions/getNCBIGeneMappingUsingGET.js",
+            "title": "Translate an RGD ID to an NCBI Gene ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getNCBIGeneMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getUniProtMappingUsingPOST": {
+            "main": "./lib/actions/getUniProtMappingUsingPOST.js",
+            "title": "Translate RGD IDs to UniProt IDs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUniProtMappingUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getUniProtMappingUsingGET": {
+            "main": "./lib/actions/getUniProtMappingUsingGET.js",
+            "title": "Translate an RGD ID to a UniProt ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUniProtMappingUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMapsUsingGET": {
+            "main": "./lib/actions/getMapsUsingGET.js",
+            "title": "Return a list assembly maps for a species",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMapsUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSpeciesTypesUsingGET": {
+            "main": "./lib/actions/getSpeciesTypesUsingGET.js",
+            "title": "Return a Map of species type keys available in RGD",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSpeciesTypesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTermUsingGET": {
+            "main": "./lib/actions/getTermUsingGET.js",
+            "title": "Returns term for Accession ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTermUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "searchPathwaysUsingGET": {
+            "main": "./lib/actions/searchPathwaysUsingGET.js",
+            "title": "Return a list of pathways based on search term",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchPathwaysUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getPathwaysWithDiagramsForCategoryUsingGET": {
+            "main": "./lib/actions/getPathwaysWithDiagramsForCategoryUsingGET.js",
+            "title": "Return a list of pathways based on category provided",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPathwaysWithDiagramsForCategoryUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getChartInfoUsingGET": {
+            "main": "./lib/actions/getChartInfoUsingGET.js",
+            "title": "Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getChartInfoUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getQtlListByPositionUsingGET": {
+            "main": "./lib/actions/getQtlListByPositionUsingGET.js",
+            "title": "Returns a list QTL for given position and assembly map",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getQtlListByPositionUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getQTLByRgdIdUsingGET": {
+            "main": "./lib/actions/getQTLByRgdIdUsingGET.js",
+            "title": "Return a QTL for provided RGD ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getQTLByRgdIdUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getActiveObjectCountUsingGET": {
+            "main": "./lib/actions/getActiveObjectCountUsingGET.js",
+            "title": "Count of active objects by type, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getActiveObjectCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneTypeCountUsingGET": {
+            "main": "./lib/actions/getGeneTypeCountUsingGET.js",
+            "title": "Count of gene types, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneTypeCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getObjectStatusCountUsingGET": {
+            "main": "./lib/actions/getObjectStatusCountUsingGET.js",
+            "title": "Count of objects with given status, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getObjectStatusCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getObjectsWithRefSeqCountUsingGET": {
+            "main": "./lib/actions/getObjectsWithRefSeqCountUsingGET.js",
+            "title": "Count of objects with reference sequence(s), by object type, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getObjectsWithRefSeqCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getObjectsWithReferenceCountUsingGET": {
+            "main": "./lib/actions/getObjectsWithReferenceCountUsingGET.js",
+            "title": "Count of objects with reference, by object type, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getObjectsWithReferenceCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getObjectsWithXDBsCountUsingGET": {
+            "main": "./lib/actions/getObjectsWithXDBsCountUsingGET.js",
+            "title": "Count of objects with external database ids, by database id, for specified species, object type and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getObjectsWithXDBsCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getProteinInteractionCountUsingGET": {
+            "main": "./lib/actions/getProteinInteractionCountUsingGET.js",
+            "title": "Count of protein interactions, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProteinInteractionCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getQtlInheritanceTypeCountUsingGET": {
+            "main": "./lib/actions/getQtlInheritanceTypeCountUsingGET.js",
+            "title": "Count of strains, by qtl inheritance type, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getQtlInheritanceTypeCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRetiredObjectCountUsingGET": {
+            "main": "./lib/actions/getRetiredObjectCountUsingGET.js",
+            "title": "Count of retired objects by type, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRetiredObjectCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getStrainTypeCountUsingGET": {
+            "main": "./lib/actions/getStrainTypeCountUsingGET.js",
+            "title": "Count of strain types, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getStrainTypeCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getWithdrawnObjectCountUsingGET": {
+            "main": "./lib/actions/getWithdrawnObjectCountUsingGET.js",
+            "title": "Count of withdrawn objects by type, for specified species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getWithdrawnObjectCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getXdbsCountUsingGET": {
+            "main": "./lib/actions/getXdbsCountUsingGET.js",
+            "title": "Count of external database ids, for specied species and date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getXdbsCountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getActiveObjectDiffUsingGET": {
+            "main": "./lib/actions/getActiveObjectDiffUsingGET.js",
+            "title": "Count difference of active objects, by type, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getActiveObjectDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getGeneTypeDiffUsingGET": {
+            "main": "./lib/actions/getGeneTypeDiffUsingGET.js",
+            "title": "Count difference of gene types, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGeneTypeDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getObjectStatusDiffUsingGET": {
+            "main": "./lib/actions/getObjectStatusDiffUsingGET.js",
+            "title": "Count difference of objects with given status, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getObjectStatusDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getObjectsWithRefSeqDiffUsingGET": {
+            "main": "./lib/actions/getObjectsWithRefSeqDiffUsingGET.js",
+            "title": "Count difference of objects with reference sequence(s), by object type, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getObjectsWithRefSeqDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getObjectsWithReferenceDiffUsingGET": {
+            "main": "./lib/actions/getObjectsWithReferenceDiffUsingGET.js",
+            "title": "Count difference of objects with reference, by object type, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getObjectsWithReferenceDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getObjectsWithXDBsDiffUsingGET": {
+            "main": "./lib/actions/getObjectsWithXDBsDiffUsingGET.js",
+            "title": "Count difference of objects with external database ids, by database id, for specified species, object type and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getObjectsWithXDBsDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getProteinInteractionDiffUsingGET": {
+            "main": "./lib/actions/getProteinInteractionDiffUsingGET.js",
+            "title": "Count difference of protein interactions, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProteinInteractionDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getQtlInheritanceTypeDiffUsingGET": {
+            "main": "./lib/actions/getQtlInheritanceTypeDiffUsingGET.js",
+            "title": "Count difference of strains, by qtl inheritance type, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getQtlInheritanceTypeDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRetiredObjectDiffUsingGET": {
+            "main": "./lib/actions/getRetiredObjectDiffUsingGET.js",
+            "title": "Count difference of retired objects, by type, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRetiredObjectDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getStrainTypeDiffUsingGET": {
+            "main": "./lib/actions/getStrainTypeDiffUsingGET.js",
+            "title": "Count difference of strain types, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getStrainTypeDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getWithdrawnObjectDiffUsingGET": {
+            "main": "./lib/actions/getWithdrawnObjectDiffUsingGET.js",
+            "title": "Count difference of withdrawn objects, by type, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getWithdrawnObjectDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getXdbsDiffUsingGET": {
+            "main": "./lib/actions/getXdbsDiffUsingGET.js",
+            "title": "Count difference of external database ids, for specified species and date range",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getXdbsDiffUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTermStatsUsingGET": {
+            "main": "./lib/actions/getTermStatsUsingGET.js",
+            "title": "getTermStats",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTermStatsUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllStrainsUsingGET": {
+            "main": "./lib/actions/getAllStrainsUsingGET.js",
+            "title": "Return all active strains in RGD",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllStrainsUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getStrainsByPositionUsingGET": {
+            "main": "./lib/actions/getStrainsByPositionUsingGET.js",
+            "title": "Return all active strains by position",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getStrainsByPositionUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getStrainByRgdIdUsingGET": {
+            "main": "./lib/actions/getStrainByRgdIdUsingGET.js",
+            "title": "Return a strain by RGD ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getStrainByRgdIdUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

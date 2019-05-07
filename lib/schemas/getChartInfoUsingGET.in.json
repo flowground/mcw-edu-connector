@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "speciesTypeKey": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "termString": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
